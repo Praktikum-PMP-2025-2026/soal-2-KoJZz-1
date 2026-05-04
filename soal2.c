@@ -62,18 +62,6 @@ node* algo(node* head, node* head1, node* head2){
             merged = new(merged, proses2->data);
             proses2 = proses2->next;
         }
-
-
-
-        // if(proses1->data < proses2->data){
-        //     merged = new(merged, proses1->data);
-        //     merged = new(merged, proses2->data);
-        // } else if (proses1->data >= proses2->data){
-        //     merged = new(merged, proses2->data);
-        //     merged = new(merged, proses1->data);
-        // }
-        // proses1 = proses1->next;
-        // proses2 = proses2->next;
     }
 
     while(proses1 != NULL){
@@ -90,47 +78,44 @@ node* algo(node* head, node* head1, node* head2){
     return head;
 }
 
-
+node* inputs(node* head){
+    int N; node* proses = head;
+    scanf("%d", &N);
+    for(int i = 0; i < N; i++){
+        int temp;
+        scanf("%d", &temp);
+        proses = new(proses, temp);
+    }
+    return head;
+}
 
 node* interface(node* head){
-    int N1; node* head1 = NULL;
-    int N2; node* head2 = NULL;
+    // int N1; 
+    
+    // int N2; 
+    node* head1 = NULL;
+    node* head2 = NULL;
 
     node* proses = head;
 
+    inputs(head1);
+    inputs(head2);
+
     // scanf("%d", &N1);
-    // int tempArr[N1];
     // for(int i = 0; i < N1; i++){
-    //     // int temp1;
-    //     scanf("%d", &tempArr[i]);
-    //     printf("%d\n", tempArr[i]);
-    // }
-    // for(int i = 0; i < N1; i++){
-    //     printf("%d\n", tempArr[i]);
-    //     head1 = new(head1, tempArr[i]);
+    //     int temp1;
+    //     scanf("%d", &temp1);
+    //     head1 = new(head1, temp1);
     // }
 
-    scanf("%d", &N1);
-    for(int i = 0; i < N1; i++){
-        int temp1;
-        scanf("%d", &temp1);
-        head1 = new(head1, temp1);
-    }
+    // scanf("%d", &N2);
+    // for(int i = 0; i < N2; i++){
+    //     int temp2;
+    //     scanf("%d", &temp2);
+    //     head2 = new(head2, temp2);
+    // }
 
-    scanf("%d", &N2);
-    for(int i = 0; i < N2; i++){
-        int temp2;
-        scanf("%d", &temp2);
-        head2 = new(head2, temp2);
-    }
-
-    // display(head1);printf("\n");
-    // display(head2);
-
-    // printf("1:%d\n",head1->data);
     proses = algo(proses, head1, head2);
-
-    // display(proses);
 
     return head;
 
