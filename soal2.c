@@ -86,13 +86,10 @@ node* inputs(node* head){
         scanf("%d", &temp);
         proses = new(proses, temp);
     }
-    return head;
+    return proses;
 }
 
-node* interface(node* head){
-    // int N1; 
-    
-    // int N2; 
+node* interface(node* head){ 
     node* head1 = NULL;
     node* head2 = NULL;
 
@@ -100,20 +97,6 @@ node* interface(node* head){
 
     head1 = inputs(head1);
     head2 = inputs(head2);
-
-    // scanf("%d", &N1);
-    // for(int i = 0; i < N1; i++){
-    //     int temp1;
-    //     scanf("%d", &temp1);
-    //     head1 = new(head1, temp1);
-    // }
-
-    // scanf("%d", &N2);
-    // for(int i = 0; i < N2; i++){
-    //     int temp2;
-    //     scanf("%d", &temp2);
-    //     head2 = new(head2, temp2);
-    // }
 
     proses = algo(proses, head1, head2);
 
