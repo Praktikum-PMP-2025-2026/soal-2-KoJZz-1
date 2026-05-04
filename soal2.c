@@ -75,7 +75,7 @@ node* algo(node* head, node* head1, node* head2){
 
     display(merged);
 
-    return head;
+    return merged;
 }
 
 node* inputs(node* head){
