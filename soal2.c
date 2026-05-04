@@ -38,6 +38,11 @@ node* new(node* head, int data){
 
 void display(node* head){
     node* proses = head;
+    if(proses == NULL){
+        printf("MERGED EMPTY ");
+        return;
+    } else printf("MERGED ");
+
     while(proses != NULL){
         printf("%d ", proses->data);
         proses = proses->next;
