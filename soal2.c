@@ -46,7 +46,6 @@ void display(node* head){
     while(proses != NULL){
         printf("%d ", proses->data);
         proses = proses->next;
-        // if(proses->next != NULL) printf(" ");
     }
 }
 
@@ -58,13 +57,23 @@ node* algo(node* head, node* head1, node* head2){
     while(proses1 != NULL && proses2 != NULL){
         if(proses1->data < proses2->data){
             merged = new(merged, proses1->data);
-            merged = new(merged, proses2->data);
+            proses1 = proses1->next;
         } else if (proses1->data >= proses2->data){
             merged = new(merged, proses2->data);
-            merged = new(merged, proses1->data);
+            proses2 = proses2->next;
         }
-        proses1 = proses1->next;
-        proses2 = proses2->next;
+
+
+
+        // if(proses1->data < proses2->data){
+        //     merged = new(merged, proses1->data);
+        //     merged = new(merged, proses2->data);
+        // } else if (proses1->data >= proses2->data){
+        //     merged = new(merged, proses2->data);
+        //     merged = new(merged, proses1->data);
+        // }
+        // proses1 = proses1->next;
+        // proses2 = proses2->next;
     }
 
     while(proses1 != NULL){
