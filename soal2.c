@@ -98,8 +98,8 @@ node* interface(node* head){
 
     node* proses = head;
 
-    inputs(head1);
-    inputs(head2);
+    head1 = inputs(head1);
+    head2 = inputs(head2);
 
     // scanf("%d", &N1);
     // for(int i = 0; i < N1; i++){
